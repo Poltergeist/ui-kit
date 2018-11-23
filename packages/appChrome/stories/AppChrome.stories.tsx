@@ -16,6 +16,7 @@ import SidebarSubMenu from "../components/SidebarSubMenu";
 import SidebarSubMenuItem from "../components/SidebarSubMenuItem";
 import HeaderBar from "../components/HeaderBar";
 import { padding } from "../../shared/styles/styleUtils";
+import { greenDarken1 } from "../../design-tokens/build/js/designTokens";
 
 const readme = require("../README.md");
 
@@ -42,6 +43,21 @@ storiesOf("AppChrome", module)
       <SidebarBareContent />
     </Sidebar>
   ))
+  .addWithInfo("Sidebar bare w/ custom background", () => (
+    <Sidebar backgroundColor={greenDarken1} isOpen={true}>
+      <SidebarBareContent />
+    </Sidebar>
+  ))
+  .addWithInfo("Sidebar bare w/ custom padding", () => (
+    <Sidebar paddingLeft="xl" paddingRight="xl" isOpen={true}>
+      <SidebarBareContent />
+    </Sidebar>
+  ))
+  .addWithInfo("Sidebar bare w/ custom width", () => (
+    <Sidebar sidebarWidth={"400px"} isOpen={true}>
+      <SidebarBareContent />
+    </Sidebar>
+  ))
   .addWithInfo("Sidebar w/ items", () => (
     <Sidebar isOpen={true}>
       <SidebarSection label="Section header">
@@ -59,6 +75,19 @@ storiesOf("AppChrome", module)
         </SidebarItem>
         <SidebarItem onClick={action("clicked a nav item")}>
           <SidebarItemLabel>Praesent Massa</SidebarItemLabel>
+        </SidebarItem>
+      </SidebarSection>
+    </Sidebar>
+  ))
+  .addWithInfo("Sidebar w/ item w/ custom padding", () => (
+    <Sidebar isOpen={true}>
+      <SidebarSection label="Section header">
+        <SidebarItem
+          paddingBottom="xl"
+          paddingTop="xl"
+          onClick={action("clicked a nav item")}
+        >
+          <SidebarItemLabel>Lorem Ipsum</SidebarItemLabel>
         </SidebarItem>
       </SidebarSection>
     </Sidebar>
@@ -122,6 +151,17 @@ storiesOf("AppChrome", module)
         >
           <SidebarItemLabel icon={<PlaceholderIcon />}>
             Praesent Massa
+          </SidebarItemLabel>
+        </SidebarItem>
+      </SidebarSection>
+    </Sidebar>
+  ))
+  .addWithInfo("Sidebar w/ item (w/ custom width icon)", () => (
+    <Sidebar isOpen={true}>
+      <SidebarSection label="Section header">
+        <SidebarItem onClick={action("clicked a nav item")}>
+          <SidebarItemLabel icon={<PlaceholderIcon width="40px" />}>
+            Lorem Ipsum
           </SidebarItemLabel>
         </SidebarItem>
       </SidebarSection>
@@ -322,4 +362,19 @@ storiesOf("AppChrome", module)
   ))
   .addWithInfo("HeaderBar bare", () => (
     <HeaderBar>HeaderBar content goes here</HeaderBar>
+  ))
+  .addWithInfo("HeaderBar bare w/ custom background", () => (
+    <HeaderBar backgroundColor={greenDarken1}>
+      HeaderBar content goes here
+    </HeaderBar>
+  ))
+  .addWithInfo("HeaderBar bare w/ custom horizontal padding", () => (
+    <HeaderBar paddingLeft="xl" paddingRight="xl">
+      HeaderBar content goes here
+    </HeaderBar>
+  ))
+  .addWithInfo("HeaderBar bare w/ custom vertical padding", () => (
+    <HeaderBar paddingTop="xl" paddingBottom="xl">
+      HeaderBar content goes here
+    </HeaderBar>
   ));

@@ -15,3 +15,5 @@ export { margin, marginAt } from "./modifiers/margin";
 export { padding } from "./modifiers/padding";
 export { textSize } from "./typography/textSize";
 export { textWeight } from "./typography/weight";
+export { background } from "./modifiers/backgroundColor";
+export { width } from "./modifiers/width";
