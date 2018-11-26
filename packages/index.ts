@@ -10,6 +10,12 @@ export {
   SidebarSubMenuItem
 } from "./appChrome";
 export { Badge, BadgeButton } from "./badge";
+export {
+  PrimaryButton,
+  StandardButton,
+  SuccessButton,
+  DangerButton
+} from "./button";
 export { InfoBoxInline, InfoBoxBanner } from "./infobox";
 export {
   Column,
